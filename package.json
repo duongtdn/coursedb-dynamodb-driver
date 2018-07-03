@@ -1,0 +1,22 @@
+{
+  "name": "contentdb-dynamodb-driver",
+  "version": "1.0.0",
+  "description": "dynamodb driver for coursedb",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duongtdn/coursedb-dynamodb-driver.git"
+  },
+  "author": "duongtdn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duongtdn/coursedb-dynamodb-driver/issues"
+  },
+  "homepage": "https://github.com/duongtdn/coursedb-dynamodb-driver#readme",
+  "dependencies": {
+    "aws-sdk": "^2.247.1"
+  }
+}
