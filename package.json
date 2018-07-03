@@ -1,5 +1,5 @@
 {
-  "name": "contentdb-dynamodb-driver",
+  "name": "coursedb-dynamodb-driver",
   "version": "1.0.0",
   "description": "dynamodb driver for coursedb",
   "main": "api.js",
