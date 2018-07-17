@@ -48,7 +48,7 @@ const db = {
     dynamodb.deleteTable({ TableName: table }, done)
   },
 
-  getCourses({ courseId }, done) {
+  getCourse({ courseId }, done) {
 
     if (!courseId) {
       done && done({error: 'must specify courseId'}, null)
