@@ -76,6 +76,28 @@ const db = {
 
   },
 
+  batchGetCourses(courseIds, done) {
+    const param = { RequestItems: {} };
+    
+    param.RequestItems[table] = { Keys: [] };
+    courseIds.forEach( id => {
+      param.RequestItems[table].Keys.push({ 'courseId' :id })
+    })
+    param.RequestItems[table].AttributesToGet = ['courseId', 'title', 'level']; // option (attributes to retrieve from this table)
+    param.RequestItems[table].ConsistentRead = false; // optional (true | false)
+
+    param.ReturnConsumedCapacity = 'NONE'; // optional (NONE | TOTAL | INDEXES)
+
+    const docClient = new AWS.DynamoDB.DocumentClient();
+    docClient.batchGet(param, (err, data) => {
+      if (err) {
+        done && done(err, null)
+      } else {
+        done && done(null, data.Responses[table])
+      }
+    })
+  },
+
   createCourses( {uid, course}, done) {
 
     if (!uid) {
