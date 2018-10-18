@@ -143,8 +143,6 @@ const db = {
 }
 
 function DynamoDB(onReady) {
- 
-  AWS.config.update({ region, endpoint });
 
   if (onReady) {
     dynamodb.listTables(function (err, data) {
