@@ -142,11 +142,9 @@ const db = {
 
 }
 
-function DynamoDB({ region = 'us-west-2', endpoint = 'http://localhost:8000' }, onReady) {
+function DynamoDB(onReady) {
  
   AWS.config.update({ region, endpoint });
- 
-  dynamodb = new AWS.DynamoDB();
 
   if (onReady) {
     dynamodb.listTables(function (err, data) {
